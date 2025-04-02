@@ -40,7 +40,7 @@ public class DashBoard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jButton1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jButton1.setText("Enter Symptoms");
+        jButton1.setText("Enter your name");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -48,7 +48,7 @@ public class DashBoard extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jButton2.setText("Enter Symptoms");
+        jButton2.setText("Enter your age");
 
         jButton4.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jButton4.setText("Enter Symptoms");
