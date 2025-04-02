@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/New/E-Doctor/src/LogInPage.java</file>
-            <file>file:/D:/New/E-Doctor/src/AdminLogIn.java</file>
             <file>file:/D:/New/E-Doctor/src/AdminDashBoard.java</file>
             <file>file:/D:/New/E-Doctor/src/DashBoard.java</file>
             <file>file:/D:/New/E-Doctor/src/AnalysisPage.java</file>
             <file>file:/D:/New/E-Doctor/src/Recommendation.java</file>
+            <file>file:/D:/New/E-Doctor/src/DatabaseConnection.java</file>
+            <file>file:/D:/New/E-Doctor/src/TestConnection.java</file>
         </group>
     </open-files>
 </project-private>
