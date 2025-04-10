@@ -1,0 +1,56 @@
+DROP DATABASE IF EXISTS `Disease_Information`;
+CREATE DATABASE `Disease_Information`;
+USE `Disease_Information`;
+
+CREATE TABLE diseases (
+  disease_id INT NOT NULL AUTO_INCREMENT,
+  disease_name VARCHAR(100) NOT NULL,
+  symptoms TEXT,
+  cause TEXT,
+  medicine TEXT,
+  curable_at_home ENUM('YES', 'NO', 'Mild cases only') NOT NULL,
+  rest_time VARCHAR(50),
+  aftercare TEXT,
+  PRIMARY KEY (disease_id)
+);
+
+INSERT INTO diseases (disease_name, symptoms, cause, medicine, curable_at_home, rest_time, aftercare) VALUES
+('Common cold', 'Runny nose, sore throat, cough', 'Viral infection', 'OTC medications', 'YES', '1-2 weeks', 'Hydrate, avoid overexertion'),
+('Flu', 'Fever, chills, body aches, fever', 'Influenza virus', 'Antiviral drugs', 'NO', '1-2 weeks', 'Hydration, follow doctor\'s instructions'),
+('Asthma', 'Wheezing, shortness of breath', 'Air pollution', 'Inhalers & steroids', 'NO', 'Chronic condition', 'Avoid triggers, use inhalers'),
+('Hypertension', 'Headache, dizziness, chest pain', 'Stress, genetics', 'Antihypertensive drugs (ACE inhibitors)', 'YES', 'Chronic', 'Regular BP monitoring, healthy diet'),
+('Chickenpox', 'Itchy rash, fever, tiredness', 'Varicella-zoster virus', 'Antihistamines, calamine lotion', 'YES', '1-2 weeks', 'Stay isolated'),
+('Diabetes Type 2', 'Increased thirst, frequent urination', 'Insulin resistance', 'Metformin, insulin', 'YES', 'Lifelong management', 'Monitor blood sugar, healthy diet, exercise'),
+('Pneumonia', 'Cough, fever, shortness of breath', 'Bacterial, viral', 'Antibiotics (bacterial), antivirals', 'NO', '1-3 weeks', 'Rest, avoid smoking'),
+('Migraine', 'Severe headache, nausea', 'Genetic, stress', 'Pain relievers', 'YES', 'Hours to days', 'Avoid triggers, maintain regular sleep schedule'),
+('Tuberculosis (TB)', 'Chronic cough, night sweats, weight loss', 'Mycobacterium tuberculosis', 'Antibiotics (Antitubercular)', 'YES', '6-9 months', 'Follow-up check-ups, complete treatment'),
+('Strep Throat', 'Sore throat, fever', 'Bacterial (Streptococcus)', 'Amoxicillin', 'YES', '3-7 days', 'Complete antibiotic course, drink fluids'),
+('Heart Attack', 'Chest pain, nausea, shortness of breath', 'Blocked arteries, cholesterol buildup', 'Aspirin, Clopidogrel, Statin', 'NO', '6-8 weeks', 'Healthy diet, regular exercise'),
+('Stroke', 'Weakness in one side, speech trouble', 'Blocked/burst blood vessel in the brain', 'Clot busters, blood thinners', 'NO', '1-6 months', 'Physical therapy, healthy lifestyle'),
+('Dengue Fever', 'High fever, severe body pain, rash', 'Mosquito-borne virus', 'Paracetamol, IV fluids', 'Mild cases only', '2 weeks', 'Drink plenty of fluids, avoid mosquitoes'),
+('Arthritis', 'Joint pain, stiffness', 'Autoimmune or wear and tear', 'NSAIDs, DMARDs', 'NO', 'Not required', 'Gentle exercise, weight control'),
+('Typhoid', 'High fever, abdominal pain', 'Salmonella bacteria', 'Antibiotics (Ciprofloxacin, Azithromycin)', 'NO', '2-3 weeks', 'Eat soft food, avoid raw vegetables'),
+('HIV/AIDS', 'Weight loss, chronic infections', 'Human Immunodeficiency Virus', 'Antiretroviral therapy (ART)', 'NO', 'Lifelong management', 'Safe practices, regular check-ups'),
+('Mumps', 'Swollen salivary glands, fever, headache', 'Mumps virus', 'Pain relievers, hydration', 'YES', '2 weeks', 'Strengthen immunity'),
+('Appendicitis', 'Severe abdominal pain, vomiting', 'Infected appendix', 'Surgery', 'NO', '2-4 weeks', 'Light diet, no heavy lifting'),
+('Urinary Tract Infection', 'Painful urination, frequent urination', 'Bacterial infection', 'Antibiotics', 'NO', '3-7 days', 'Follow up with the doctor'),
+('Conjunctivitis', 'Nasal congestion, headache, facial pain', 'Bacterial or viral infection', 'Decongestants, nasal sprays', 'YES', '3-7 days', 'Complete antibiotics'),
+('Whooping Cough', 'Severe cough, difficulty breathing', 'Bacterial infection', 'Antibiotics', 'NO', '1-2 weeks', 'Avoid close contact until cleared'),
+('Malaria', 'Fever, chills, sweating, headache', 'Plasmodium parasite', 'Antimalarial drugs', 'NO', '1-3 weeks', 'Continue antimalarial medication'),
+('COVID-19', 'Fever, cough, shortness of breath, fatigue', 'SARS-CoV-2 virus', 'Antiviral medications', 'NO', '1-4 weeks', 'Avoid close contact until cleared'),
+('Scarlet Fever', 'Sore throat, red rash, fever', 'Group A Streptococcus bacteria', 'Antibiotics', 'NO', '1-2 weeks', 'Avoid close contact with others'),
+('Cholera', 'Severe diarrhea, vomiting, dehydration', 'Vibrio cholerae', 'Rehydration', 'NO', '1-2 weeks', 'Stay hydrated'),
+('Toxoplasmosis', 'Flu-like symptoms, muscle aches', 'Toxoplasma gondii', 'Antiparasitic medications', 'NO', 'Few weeks', 'Stay hydrated'),
+('Zika Virus', 'Fever, rash, joint pain, conjunctivitis', 'Zika virus (mosquito-borne)', 'Supportive care', 'YES', '1-2 weeks', 'Avoid mosquito bites'),
+('Hepatitis D', 'Fatigue, jaundice, abdominal pain, nausea', 'Hepatitis D virus', 'Antiviral drugs', 'NO', 'Ongoing care', 'Avoid alcohol'),
+('Tinea', 'Red, circular, itchy rash on the skin', 'Fungal infection', 'Antifungal creams', 'YES', '1-3 weeks', 'Maintain skin hygiene'),
+('Shingles', 'Painful rash, blisters, fever, headache', 'Reactivation of varicella-zoster virus', 'Antiviral drugs', 'NO', '2-4 weeks', 'Complete antiviral treatment'),
+('Tetanus', 'Muscle stiffness, jaw lock, difficulty swallowing', 'Bacterial infection', 'Tetanus antitoxin', 'NO', '2-4 weeks', 'Get tetanus vaccination'),
+('Lyme Disease', 'Rash (bull\'s-eye), fever, fatigue, muscle aches', 'Bacterial infection', 'Antibiotics', 'NO', '2-4 weeks', 'Complete the antibiotic course'),
+('Sickle Cell Anemia', 'Pain episodes, fatigue, shortness of breath, pale skin', 'Genetic disorder', 'Pain relief medications', 'NO', 'Ongoing care', 'Stay hydrated'),
+('Celiac Disease', 'Diarrhea, bloating, weight loss, fatigue', 'Gluten intolerance', 'Gluten-free diet', 'YES', 'Ongoing care', 'Follow a lifelong gluten-free diet'),
+('Irritable Bowel Syndrome', 'Abdominal pain, bloating, diarrhea/constipation', 'Unknown, stress', 'Fiber supplements', 'YES', 'Ongoing care', 'Avoid trigger foods'),
+('Gout', 'Severe joint pain, redness, swelling', 'Uric acid buildup', 'Anti-inflammatory medications', 'YES', 'Few days to 1 week', 'Avoid purine-rich foods'),
+('Bronchitis', 'Cough, mucus production', 'Viral or bacterial infection', 'Cough suppressants', 'YES', '1-3 weeks', 'Avoid irritants'),
+('Tonsillitis', 'Sore throat, swollen tonsils, fever', 'Bacterial or viral infection', 'Antibiotics', 'NO', '1-2 weeks', 'Stay hydrated'),
+('Hives', 'Itchy, raised red welts, swelling of the skin', 'Allergic reaction', 'Antihistamines, corticosteroid creams', 'YES', 'Days to 1 week', 'Avoid triggers');
