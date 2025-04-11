@@ -1,3 +1,5 @@
+package com.mycompany.edoctor;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -7,6 +9,12 @@
  *
  * @author User
  */
+import javax.swing.JOptionPane;
+import com.mycompany.edoctor.AuthService;
+import com.mycompany.edoctor.SecurityUtils;
+import com.mycompany.edoctor.MainApplication;
+import com.mycompany.edoctor.AdminPanel;
+import com.mycompany.edoctor.SignUpForm;
 public class LogInPage extends javax.swing.JFrame {
 
     /**
@@ -184,15 +192,107 @@ public class LogInPage extends javax.swing.JFrame {
     }//GEN-LAST:event_userNameActionPerformed
 
     private void loginb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginb1ActionPerformed
-        // TODO add your handling code here:
+        String username = userName.getText().trim();
+    String password = new String(this.password.getPassword());
+    
+    // 2. Check if fields are empty
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, 
+            "Please enter both username and password", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // 3. Sanitize the username input
+    username = SecurityUtils.sanitizeInput(username);
+    
+    try {
+        // 4. Try to authenticate
+        if (AuthService.authenticateUser(username, password)) {
+            // 5. Success - show message and open main app
+            JOptionPane.showMessageDialog(this, 
+                "Login successful!", 
+                "Success", 
+                JOptionPane.INFORMATION_MESSAGE);
+            
+            // 6. Open the main application window
+            MainApplication mainApp = new MainApplication(username);
+            mainApp.setVisible(true);
+            
+            // 7. Close the login window
+            this.dispose();
+        } else {
+            // 8. Failed - show error
+            JOptionPane.showMessageDialog(this, 
+                "Invalid username or password", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception e) {
+        // 9. Show any errors that occurred
+        JOptionPane.showMessageDialog(this, 
+            "Error during authentication: " + e.getMessage(), 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_loginb1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       SignUpForm signUp = new SignUpForm();
+    
+    // 2. Show the signup form
+    signUp.setVisible(true);
+    
+    // 3. Close the login window
+    this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        String username = userName.getText().trim();
+    String password = new String(this.password.getPassword());
+    
+    // 2. Check if fields are empty
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, 
+            "Please enter both username and password", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // 3. Sanitize the username input
+    username = SecurityUtils.sanitizeInput(username);
+    
+    try {
+        // 4. Try to authenticate as admin
+        if (AuthService.authenticateAdmin(username, password)) {
+            // 5. Success - show message and open admin panel
+            JOptionPane.showMessageDialog(this, 
+                "Admin login successful!", 
+                "Success", 
+                JOptionPane.INFORMATION_MESSAGE);
+            
+            // 6. Open the admin panel
+            AdminPanel adminPanel = new AdminPanel();
+            adminPanel.setVisible(true);
+            
+            // 7. Close the login window
+            this.dispose();
+        } else {
+            // 8. Failed - show error
+            JOptionPane.showMessageDialog(this, 
+                "Invalid admin credentials", 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception e) {
+        // 9. Show any errors that occurred
+        JOptionPane.showMessageDialog(this, 
+            "Error during admin authentication: " + e.getMessage(), 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
