@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/New/E-Doctor/src/LogInPage.java</file>
+            <file>file:/D:/New/E-Doctor/src/com/mycompany/edoctor/LogInPage.java</file>
+            <file>file:/D:/New/E-Doctor/src/signup.java</file>
             <file>file:/D:/New/E-Doctor/src/AdminDashBoard.java</file>
             <file>file:/D:/New/E-Doctor/src/DashBoard.java</file>
             <file>file:/D:/New/E-Doctor/src/AnalysisPage.java</file>
             <file>file:/D:/New/E-Doctor/src/Recommendation.java</file>
             <file>file:/D:/New/E-Doctor/src/DatabaseConnection.java</file>
             <file>file:/D:/New/E-Doctor/src/TestConnection.java</file>
+            <file>file:/D:/New/E-Doctor/NewDisease.sql</file>
+            <file>file:/D:/New/E-Doctor/src/com/mycompany/edoctor/SecurityUtils.java</file>
+            <file>file:/D:/New/E-Doctor/src/com/mycompany/edoctor/AuthService.java</file>
+            <file>file:/D:/New/E-Doctor/src/com/mycompany/edoctor/MainApplication.java</file>
         </group>
     </open-files>
 </project-private>
