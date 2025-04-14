@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/New/edoctor/src/edoctor/DBConnector.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/Disease.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/EDoctorManager.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/EDoctorUI.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/Login.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/Symptom.java</file>
-            <file>file:/D:/New/edoctor/src/edoctor/Treatment.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
