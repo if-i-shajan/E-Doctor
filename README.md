@@ -23,7 +23,7 @@ The E-Doctor system functions as an information storage and retrieval platform f
 ## Technical Requirements
 - **Programming Language**: Java
 - **Frameworks/Libraries**: Java Collections, Java I/O for file handling
-- **Development Tools**: VS Code, JDK 17+
+- **Development Tools**: Apache NetBeans, JDK 23
 - **Database**: File-based storage (Text files), with potential for database integration in future versions
 
 ## Object-Oriented Design Aspects
